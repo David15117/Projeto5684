@@ -39,6 +39,9 @@ class TicketSerializer(serializers.HyperlinkedModelSerializer):
 		dados_evento = dados.pop('evento')
 		evento = Evento.objects.get(nome=dados_evento)
 		ticket = Ticket.objects.create(evento = evento,**dados)
+		#evento = Evento.objects.create(**dados_evento)
+		#ticket = Ticket.objects.create(evento = evento,**dados)
+		#return ticket
 		return ticket
 class InscricaoSerializer(serializers.HyperlinkedModelSerializer):
 	#participante = PessoaSerializer(many=False)
