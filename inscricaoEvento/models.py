@@ -30,7 +30,7 @@ class Ticket(models.Model):
         return '{}'.format(self.nome)
 
 class Inscricao(models.Model):
-    evento = models.ForeignKey(Evento, related_name = 'Evento_Inscricao', null = True, blank = False)
+    ##evento = models.ForeignKey(Evento, related_name = 'Evento_Inscricao', null = True, blank = False)
     participante = models.ForeignKey(Pessoa, related_name = 'Pessoa_Inscricao', null = True, blank = False)
     ticket = models.ForeignKey(Ticket, related_name = 'Ticket_Inscricao', null = True, blank = False)
     validacao = models.BooleanField("Pagamento Confirmado",default=True)
